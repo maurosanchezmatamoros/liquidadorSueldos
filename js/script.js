@@ -49,30 +49,30 @@ for( i = 1 ; i <= CantidadEmpleados ; i++) {
     let ApellidoNombre = prompt("Apellido y nombre del empleado");
     console.log("Empleado: " + ApellidoNombre);
     
-    let SueldoHabitual = parseInt(prompt("Salario Basico de " + ApellidoNombre));
+    let SueldoHabitual = parseInt(prompt("Salario Basico de " + ApellidoNombre)).toFixed(2);
     
     let DiasAusencias = parseInt(prompt("Ausencias injustificadas del mes de " + ApellidoNombre));
     
     let SueldoBasico = SueldoHabitual;
     console.log("Sueldo básico: $" + SueldoBasico);
 
-    let Ausencias = (SueldoBasico / DiasMesLiquidacion * DiasAusencias);
+    let Ausencias = (SueldoBasico / DiasMesLiquidacion * DiasAusencias).toFixed(2);
     console.log("Ausencias (" + DiasAusencias + "): $ (" + Ausencias + ")");
     
-    console.log("Jubilación: $ (" + Jubilacion(SueldoBasico) + ")");
+    console.log("Jubilación: $ (" + (Jubilacion(SueldoBasico)).toFixed(2) + ")");
     
-    console.log("Ley 19032: $ (" + Ley19032(SueldoBasico) + ")");
+    console.log("Ley 19032: $ (" + (Ley19032(SueldoBasico)).toFixed(2) + ")");
     
-    console.log("Ley 23660: $ (" + Ley23660(SueldoBasico) + ")");
+    console.log("Ley 23660: $ (" + (Ley23660(SueldoBasico)).toFixed(2) + ")");
     
     let SueldoBruto = SueldoBasico - Ausencias;
     console.log("Total sueldo bruto: $" + SueldoBruto);
     
-    let Descuentos = Jubilacion + Ley19032 + Ley23660;
-    console.log("Total descuentos: $" + Descuentos);
+    let Descuentos = Jubilacion(SueldoBasico) + Ley19032(SueldoBasico) + Ley23660(SueldoBasico);
+    console.log("Total descuentos: $" + Descuentos.toFixed(2));
     
     let SueldoNeto = SueldoBruto - Descuentos;
-    console.log("Sueldo neto a pagar: $" + SueldoNeto);
+    console.log("Sueldo neto a pagar: $" + SueldoNeto.toFixed(2));
 
     TotalSueldosBrutos += SueldoBruto
 
@@ -81,7 +81,7 @@ for( i = 1 ; i <= CantidadEmpleados ; i++) {
     TotalSueldosNetos += SueldoNeto
 }
 
-console.log("Total de sueldos brutos: $" + TotalSueldosBrutos)
-console.log("Total de descuentos: $ (" + TotalDescuentos + ")")
-console.log("Total de sueldos netos a pagar: $" + TotalSueldosNetos)
+console.log("Total final de sueldos brutos: $" + TotalSueldosBrutos)
+console.log("Total final de descuentos: $ (" + TotalDescuentos + ")")
+console.log("Total final de sueldos netos a pagar: $" + TotalSueldosNetos)
 
