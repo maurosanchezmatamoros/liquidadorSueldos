@@ -1,6 +1,6 @@
-const AlicuotaJubilacion = 0.11,
-AlicuotaLey19032 = 0.03,
-AlicuotaLey23660 = 0.03
+const Jubilacion = (x) => x * 0.11
+const Ley19032 = (x) => x * 0.03
+const Ley23660 = (x) => x * 0.03
 
 let TotalSueldosNetos = 0,
 TotalSueldosBrutos = 0,
@@ -59,14 +59,11 @@ for( i = 1 ; i <= CantidadEmpleados ; i++) {
     let Ausencias = (SueldoBasico / DiasMesLiquidacion * DiasAusencias);
     console.log("Ausencias (" + DiasAusencias + "): $ (" + Ausencias + ")");
     
-    let Jubilacion = SueldoBasico * AlicuotaJubilacion;
-    console.log("Jubilación: $ (" + Jubilacion + ")");
+    console.log("Jubilación: $ (" + Jubilacion(SueldoBasico) + ")");
     
-    let Ley19032 = SueldoBasico * AlicuotaLey19032;
-    console.log("Ley 19032: $ (" + Ley19032 + ")");
+    console.log("Ley 19032: $ (" + Ley19032(SueldoBasico) + ")");
     
-    let Ley23660 = SueldoBasico * AlicuotaLey23660;
-    console.log("Ley 23660: $ (" + Ley23660 + ")");
+    console.log("Ley 23660: $ (" + Ley23660(SueldoBasico) + ")");
     
     let SueldoBruto = SueldoBasico - Ausencias;
     console.log("Total sueldo bruto: $" + SueldoBruto);
@@ -87,13 +84,4 @@ for( i = 1 ; i <= CantidadEmpleados ; i++) {
 console.log("Total de sueldos brutos: $" + TotalSueldosBrutos)
 console.log("Total de descuentos: $ (" + TotalDescuentos + ")")
 console.log("Total de sueldos netos a pagar: $" + TotalSueldosNetos)
-
-
-
-
-
-
-
-
-
 
