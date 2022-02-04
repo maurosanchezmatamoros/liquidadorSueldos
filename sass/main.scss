@@ -14,6 +14,7 @@ html{
 }
 
 .subtitulo1{
+    text-align: center;
     font-style: italic;
     font-size: 1.2rem;
 }
@@ -108,12 +109,12 @@ html{
         background-color: #AECCF2;
         tr{
             th{
-                border: 1px solid #262626;
+                border: 0.5px solid #26262630;
                 background-color: #65768C;
                 width: 10rem;
             }
             td{
-                border: 1px solid #262626;
+                border: 0.5px solid #26262630;
                 background-color: #C2E5F2;
             }
         }
