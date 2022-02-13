@@ -1,3 +1,5 @@
+@import "./components/_login";
+
 html{
     font-family: 'Raleway', sans-serif;
     background-color: #AECCF290;
@@ -56,44 +58,22 @@ html{
                     border-radius: 0.5rem;
                     color: #fff;
                 }
+                input:active {
+                    background-color: #65768C80;
+                }
             }
         }
     }
 }
 
 .form2{
-    display: flex;
-    justify-content: center;
+    @extend .form1;
     .formDatosEmpleados{
-        border: 2px solid #262626;
-        border-radius: 1rem;
-        padding: 2rem;
-        background-color: #AECCF2;
+        @extend .formDatosGenerales;
         &__div{
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            padding: 0.3rem;
-            div{
-                margin: 0 2rem;
-                input{
-                    border-radius: 0.5rem;
-                    line-height: 1.5rem;
-                    border: none;
-                }
-            }
+            @extend .formDatosGenerales__div;
             &-submit{
-                text-align: center;
-                input{
-                    width: 10rem;
-                    height: 2rem;
-                    margin-top: 1rem;
-                    background-color: #65768C;
-                    font-weight: bold;
-                    border: none;
-                    border-radius: 0.5rem;
-                    color: #fff;
-                }
+                @extend .formDatosGenerales__div-submit;
             }
         }
     }

@@ -1,208 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="./css/main.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,500;0,600;1,100;1,200;1,300&display=swap" rel="stylesheet">
-    <title>Liquidador de sueldos</title>
+    <title>Login Liquidador de Sueldos</title>
 </head>
 <body>
     <h1 class="titulo1">Sistema de Liquidacion de Sueldos</h1>
 
-    <p class="subtitulo1">Bienvenido, gracias por ingresar a nuestro sistema de liquidación de sueldos. A continuación, ingrese los datos solicitados para poder confeccionar los recibos de sueldos correspondientes y obtener los costos totales de su personal.</p>
+    <p class="subtitulo1">Bienvenido, a continuación ingrese su usuario y clave, o si no posee, regístrese.</p>
 
-    <h3 class="subtitulo2">Datos generales</h3>
-
-    <div class="form1">
-        <form class="formDatosGenerales" action="">
-            <div class="formDatosGenerales__div">
-                <div><label for="nombreEmpresa">Razón social:</label></div>
-                <div><input id="nombreEmpresa" type="text"></div>
-            </div>
-            <div class="formDatosGenerales__div">
-                <div><label for="cuitEmpresa">CUIT:</label></div>
-                <div><input id="cuitEmpresa" type="text" size="11 || 13"></div>
-            </div>
-            <div class="formDatosGenerales__div">
-                <div><label for="domicilioEmpresa">Domicilio:</label></div>
-                <div><input id="domicilioEmpresa" type="text"></div>
-            </div>
-            <div class="formDatosGenerales__div">
-                <div><label for="anoLiquidacion">Año de liquidación (YYYY):</label></div>
-                <div><input id="anoLiquidacion" type="number" required size="4" min="1900" max="2100"></div>
-            </div>
-            <div class="formDatosGenerales__div">
-                <div><label for="mesLiquidacion">Mes de liquidación (MM):</label></div>
-                <div><input id="mesLiquidacion" type="number" required size="4" max="12" min="1"></div>
-            </div>
-            <div class="formDatosGenerales__div-submit"><input type="submit" value="GUARDAR DATOS"></div>
-        </form>
-    </div>
-
-    <h3 class="subtitulo2">Datos del empleado</h3>
-
-    <div class="form2">
-        <form class="formDatosEmpleados" action="">
-            <div class="formDatosEmpleados__div">
-                <div><label for="legajo">Legajo N°:</label></div>
-                <div><input id=legajo type="number"></div>
-            </div>
-            <div class="formDatosEmpleados__div">
-                <div><label for="apellidoNombre">Apellido y Nombre:</label></div>
-                <div><input id=apellidoNombre type="text"></div>
-            </div>
-            <div class="formDatosEmpleados__div">
-                <div><label for="cuil">CUIL del empleado:</label></div>
-                <div><input id=cuil type="text" size="11"></div>
-            </div>
-            <div class="formDatosEmpleados__div">
-                <div><label for="sueldoHabitual">Sueldo bruto de la categoría:</label></div>
-                <div><input id=sueldoHabitual type="number" required></div>
-            </div>
-            <div class="formDatosEmpleados__div">
-                <div><label for="diasAusencias">Días de ausencias del mes:</label></div>
-                <div><input id=diasAusencias type="number" required></div>
-            </div>
-            <div class="formDatosEmpleados__div">
-                <div><label for="descuentoJubilacion">El empleado aporta jubilación?</label></div>
-                <div><input id=descuentoJubilacion type="checkbox" checked="checked"></div>
-            </div>
-            <div class="formDatosEmpleados__div">
-                <div><label for="descuentoLey19032">El empleado aporta Ley 19032 (INSSJP)?</label></div>
-                <div><input id=descuentoLey19032 type="checkbox" checked="checked"></div>
-            </div>
-            <div class="formDatosEmpleados__div">
-                <div><label for="descuentoLey23660">El empleado aporta Ley 23660 (Obra Social)?</label></div>
-                <div><input id=descuentoLey23660 type="checkbox" checked="checked"></div>
-            </div>
-            <div class="formDatosEmpleados__div">
-                <div><label for="alicuotaSindicato">Alicuota de aporte al Sindicato:</label></div>
-                <div><input id=alicuotaSindicato type="number" required></div>
-            </div>
-            <div class="formDatosEmpleados__div-submit"><input type="submit" value="GENERAR RECIBO"></div>
-        </form>
-    </div>
-
-    <h2 class="titulo2">Recibo de sueldo</h2>
-
-    <div class="tablaReciboSueldo">
-        <table class="tablaReciboSueldo__in" cellspacing="0" cellpadding="3px">
-            <tr>
-                <th colspan="4">Datos de la empresa</th>
-            </tr>
-            <tr>
-                <td>Razón social:</td>
-                <td colspan="3" id="nombreEmpresaRecibo"></td>
-            </tr>
-            <tr>
-                <td>CUIT:</td>
-                <td colspan="3" id="cuitEmpresaRecibo"></td>
-            </tr>
-            <tr>
-                <td>Domicilio:</td>
-                <td colspan="3" id="domicilioEmpresaRecibo"></td>
-            </tr>
-            <tr>
-                <td>Período de liquidación:</td>
-                <td colspan="3" id="periodoLiquidacionRecibo"></td>
-            </tr>
-            <tr>
-                <th colspan="4">Datos del empleado</th>
-            </tr>
-            <tr>
-                <td>Apellido y Nombre:</td>
-                <td colspan="3" id="apellidoNombreRecibo"></td>
-            </tr>
-            <tr>
-                <td>CUIL:</td>
-                <td colspan="3" id="cuilRecibo"></td>
-            </tr>
-            <tr>
-                <td>Legajo N°:</td>
-                <td colspan="3" id="legajoRecibo"></td>
-            </tr>
-            <tr>
-                <td>Sueldo categoría:</td>
-                <td colspan="3" id="sueldoHabitualRecibo"></td>
-            </tr>
-            <tr>
-                <th>Concepto</th>
-                <th>Remunerativo</th>
-                <th>No remunerativo</th>
-                <th>Descuentos</th>
-            </tr>
-            <tr>
-                <td>Sueldo básico:</td>
-                <td id="sueldoBasicoRecibo"></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Ausencias:</td>
-                <td id="ausenciasRecibo"></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Jubilación:</td>
-                <td></td>
-                <td></td>
-                <td id="jubilacionRecibo"></td>
-            </tr>
-            <tr>
-                <td>Ley 19032:</td>
-                <td></td>
-                <td></td>
-                <td id="ley19032Recibo"></td>
-            </tr>
-            <tr>
-                <td>Ley 23660:</td>
-                <td></td>
-                <td></td>
-                <td id="ley23660Recibo"></td>
-            </tr>
-            <tr>
-                <td>Sindicato:</td>
-                <td></td>
-                <td></td>
-                <td id="sindicatoRecibo"></td>
-            </tr>
-            <tr>
-                <td>SUBTOTALES:</td>
-                <td id="subtotalRemunerativoRecibo"></td>
-                <td id="subtotalNoRemunerativoRecibo"></td>
-                <td id="subtotalDescuentosRecibo"></td>
-            </tr>
-            <tr>
-                <td colspan="3">SUELDO NETO A PAGAR</td>
-                <td id="netoPagarRecibo"></td>
-            </tr>
-        </table>
-    </div>
-
-    <h3 class="subtitulo2">Totales</h3>
-
-    <div class="totales">
-        <div class="totales__div" action="">
-            <div class="totales__div__div">
-                <div><span>Totales sueldos brutos: </span></div>
-                <div><span id="totalSueldosBrutos">$ -</span></div>
-            </div>
-            <div class="totales__div__div">
-                <div><span>Totales descuentos: </span></div>
-                <div><span id="totalDescuentos">$ -</span></div>
-            </div>
-            <div class="totales__div__div">
-                <div><span>Totales sueldos netos: </span></div>
-                <div><span id="totalSueldosNetos">$ -</span></div>
-            </div>
+    <div class="inicio">
+        <div class="inicio__login">
+            <h2>INICIAR SESIÓN</h2>
+            <label for="username">Username:</label>
+            <input type="text" id="username">
+            <label for="password">Password:</label>
+            <input type="text" id="password">
+            <input class="inicio__login__submit" type="button" value="INGRESAR">
         </div>
+        <div class="inicio__signup">
+            <h2>CREAR USUARIO</h2>
+            <label for="username-sign">Username:</label>
+            <input type="text" id="username-sign" min="6" max="12">
+            <label for="password-sign">Password:</label>
+            <input type="text" id="password-sign" min="6" max="12">
+            <input class="inicio__signup__submit" type="button" value="REGISTRARSE">
+        </div>
+    </div>
 
-<script src="./js/script.js"></script>
+    <script src="./js/login.js"></script>
 </body>
 </html>
