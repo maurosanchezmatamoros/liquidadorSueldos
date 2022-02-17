@@ -15,7 +15,7 @@
 
     <p class="subtitulo1">Bienvenido, gracias por ingresar a nuestro sistema de liquidación de sueldos. A continuación, ingrese los datos solicitados para poder confeccionar los recibos de sueldos correspondientes y obtener los costos totales de su personal.</p>
 
-    <h3 class="subtitulo2">Datos generales</h3>
+    <h3 class="subtitulo2">Datos del empleador</h3>
 
     <div class="form1">
         <form class="formDatosGenerales" action="">
@@ -31,19 +31,11 @@
                 <div><label for="domicilioEmpresa">Domicilio:</label></div>
                 <div><input id="domicilioEmpresa" type="text"></div>
             </div>
-            <div class="formDatosGenerales__div">
-                <div><label for="anoLiquidacion">Año de liquidación (YYYY):</label></div>
-                <div><input id="anoLiquidacion" type="number" required size="4" min="1900" max="2100"></div>
-            </div>
-            <div class="formDatosGenerales__div">
-                <div><label for="mesLiquidacion">Mes de liquidación (MM):</label></div>
-                <div><input id="mesLiquidacion" type="number" required size="4" max="12" min="1"></div>
-            </div>
-            <div class="formDatosGenerales__div-submit"><input type="submit" value="GUARDAR DATOS"></div>
+            <div class="formDatosGenerales__div-submit"><input type="button" value="GUARDAR DATOS"></div>
         </form>
     </div>
 
-    <h3 class="subtitulo2">Datos del empleado</h3>
+    <h3 class="subtitulo2">Carga de empleados</h3>
 
     <div class="form2">
         <form class="formDatosEmpleados" action="">
@@ -63,27 +55,44 @@
                 <div><label for="sueldoHabitual">Sueldo bruto de la categoría:</label></div>
                 <div><input id=sueldoHabitual type="number" required></div>
             </div>
-            <div class="formDatosEmpleados__div">
+            <div class="formDatosEmpleados__div-submit"><input type="button" value="CARGAR EMPLEADO"></div>
+            <div class="empleadosCargados"></div>
+        </form>
+    </div>
+
+    <h3 class="subtitulo2">Datos de Liquidación</h3>
+
+    <div class="form3">
+        <form class="formDatosLiquidacion" action="">
+            <div class="formDatosLiquidacion__div">
+                <div><label for="anoLiquidacion">Año de liquidación (YYYY):</label></div>
+                <div><input id="anoLiquidacion" type="number" required size="4" min="1900" max="2100"></div>
+            </div>
+            <div class="formDatosLiquidacion__div">
+                <div><label for="mesLiquidacion">Mes de liquidación (MM):</label></div>
+                <div><input id="mesLiquidacion" type="number" required size="2" max="12" min="1"></div>
+            </div>
+            <div class="formDatosLiquidacion__div">
                 <div><label for="diasAusencias">Días de ausencias del mes:</label></div>
                 <div><input id=diasAusencias type="number" required></div>
             </div>
-            <div class="formDatosEmpleados__div">
+            <div class="formDatosLiquidacion__div">
                 <div><label for="descuentoJubilacion">El empleado aporta jubilación?</label></div>
                 <div><input id=descuentoJubilacion type="checkbox" checked="checked"></div>
             </div>
-            <div class="formDatosEmpleados__div">
+            <div class="formDatosLiquidacion__div">
                 <div><label for="descuentoLey19032">El empleado aporta Ley 19032 (INSSJP)?</label></div>
                 <div><input id=descuentoLey19032 type="checkbox" checked="checked"></div>
             </div>
-            <div class="formDatosEmpleados__div">
+            <div class="formDatosLiquidacion__div">
                 <div><label for="descuentoLey23660">El empleado aporta Ley 23660 (Obra Social)?</label></div>
                 <div><input id=descuentoLey23660 type="checkbox" checked="checked"></div>
             </div>
-            <div class="formDatosEmpleados__div">
+            <div class="formDatosLiquidacion__div">
                 <div><label for="alicuotaSindicato">Alicuota de aporte al Sindicato:</label></div>
-                <div><input id=alicuotaSindicato type="number" required></div>
+                <div><input id=alicuotaSindicato type="number" required size="2" max="40" min="0"></div>
             </div>
-            <div class="formDatosEmpleados__div-submit"><input type="submit" value="GENERAR RECIBO"></div>
+            <div class="formDatosLiquidacion__div-submit"><input type="button" value="GENERAR RECIBOS"></div>
         </form>
     </div>
 

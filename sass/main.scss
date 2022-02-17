@@ -79,6 +79,19 @@ html{
     }
 }
 
+.form3{
+    @extend .form1;
+    .formDatosLiquidacion{
+        @extend .formDatosGenerales;
+        &__div{
+            @extend .formDatosGenerales__div;
+            &-submit{
+                @extend .formDatosGenerales__div-submit;
+            }
+        }
+    }
+}
+
 .tablaReciboSueldo{
     display: flex;
     justify-content: center;

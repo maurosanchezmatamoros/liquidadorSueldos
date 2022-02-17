@@ -81,7 +81,7 @@ html {
   text-align: center;
 }
 
-.form1, .form2 {
+.form1, .form2, .form3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -90,14 +90,14 @@ html {
           justify-content: center;
 }
 
-.form1 .formDatosGenerales, .form2 .formDatosGenerales, .form2 .formDatosEmpleados {
+.form1 .formDatosGenerales, .form2 .formDatosGenerales, .form3 .formDatosGenerales, .form2 .formDatosEmpleados, .form3 .formDatosLiquidacion {
   border: 2px solid #262626;
   border-radius: 1rem;
   padding: 2rem;
   background-color: #AECCF2;
 }
 
-.form1 .formDatosGenerales__div, .form2 .formDatosGenerales__div, .form2 .formDatosEmpleados__div {
+.form1 .formDatosGenerales__div, .form2 .formDatosGenerales__div, .form3 .formDatosGenerales__div, .form2 .formDatosEmpleados__div, .form3 .formDatosLiquidacion__div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -109,21 +109,21 @@ html {
   padding: 0.3rem;
 }
 
-.form1 .formDatosGenerales__div div, .form2 .formDatosGenerales__div div, .form2 .formDatosEmpleados__div div {
+.form1 .formDatosGenerales__div div, .form2 .formDatosGenerales__div div, .form3 .formDatosGenerales__div div, .form2 .formDatosEmpleados__div div, .form3 .formDatosLiquidacion__div div {
   margin: 0 2rem;
 }
 
-.form1 .formDatosGenerales__div div input, .form2 .formDatosGenerales__div div input, .form2 .formDatosEmpleados__div div input {
+.form1 .formDatosGenerales__div div input, .form2 .formDatosGenerales__div div input, .form3 .formDatosGenerales__div div input, .form2 .formDatosEmpleados__div div input, .form3 .formDatosLiquidacion__div div input {
   border-radius: 0.5rem;
   line-height: 1.5rem;
   border: none;
 }
 
-.form1 .formDatosGenerales__div-submit, .form2 .formDatosGenerales__div-submit, .form2 .formDatosEmpleados__div-submit {
+.form1 .formDatosGenerales__div-submit, .form2 .formDatosGenerales__div-submit, .form3 .formDatosGenerales__div-submit, .form2 .formDatosEmpleados__div-submit, .form3 .formDatosLiquidacion__div-submit {
   text-align: center;
 }
 
-.form1 .formDatosGenerales__div-submit input, .form2 .formDatosGenerales__div-submit input, .form2 .formDatosEmpleados__div-submit input {
+.form1 .formDatosGenerales__div-submit input, .form2 .formDatosGenerales__div-submit input, .form3 .formDatosGenerales__div-submit input, .form2 .formDatosEmpleados__div-submit input, .form3 .formDatosLiquidacion__div-submit input {
   width: 10rem;
   height: 2rem;
   margin-top: 1rem;
@@ -134,7 +134,7 @@ html {
   color: #fff;
 }
 
-.form1 .formDatosGenerales__div-submit input:active, .form2 .formDatosGenerales__div-submit input:active, .form2 .formDatosEmpleados__div-submit input:active {
+.form1 .formDatosGenerales__div-submit input:active, .form2 .formDatosGenerales__div-submit input:active, .form3 .formDatosGenerales__div-submit input:active, .form2 .formDatosEmpleados__div-submit input:active, .form3 .formDatosLiquidacion__div-submit input:active {
   background-color: #65768C80;
 }
 
