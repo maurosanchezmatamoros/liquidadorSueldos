@@ -18,6 +18,8 @@ function signUp() {
     const newUserPass = document.getElementById("password-sign").value
     const userFound = Usuarios.find(user => user.username == newUser)
     if(userFound){alert("El usuario ya se encuentra registrado")}
+    if(newUser.lenght < 6 || newUser.length > 12 || newUserPass.length < 6 || newUserPass.length > 12 ){
+        alert("El usuario y clave deben tener entre 6 y 12 caracteres")}
     else{
     const newSignUp = new Login(newUser, newUserPass)
     Usuarios.push(newSignUp)

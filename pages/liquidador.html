@@ -41,7 +41,7 @@
         <form class="formDatosEmpleados" action="">
             <div class="formDatosEmpleados__div">
                 <div><label for="legajo">Legajo N°:</label></div>
-                <div><input id=legajo type="number"></div>
+                <div><input id=legajo type="number" min="1"></div>
             </div>
             <div class="formDatosEmpleados__div">
                 <div><label for="apellidoNombre">Apellido y Nombre:</label></div>
@@ -53,10 +53,12 @@
             </div>
             <div class="formDatosEmpleados__div">
                 <div><label for="sueldoHabitual">Sueldo bruto de la categoría:</label></div>
-                <div><input id=sueldoHabitual type="number" required></div>
+                <div><input id=sueldoHabitual type="number" required min="0"></div>
             </div>
             <div class="formDatosEmpleados__div-submit"><input type="button" value="CARGAR EMPLEADO"></div>
-            <div class="empleadosCargados"></div>
+            <div>
+                <ul class="empleadosCargados"></ul>
+            </div>
         </form>
     </div>
 
@@ -96,9 +98,9 @@
         </form>
     </div>
 
-    <h2 class="titulo2">Recibo de sueldo</h2>
+    <h2 class="titulo2" style="visibility: collapse">Recibos de sueldo</h2>
 
-    <div class="tablaReciboSueldo">
+    <div class="tablaReciboSueldo" style="visibility: collapse">
         <table class="tablaReciboSueldo__in" cellspacing="0" cellpadding="3px">
             <tr>
                 <th colspan="4">Datos de la empresa</th>
@@ -193,9 +195,9 @@
         </table>
     </div>
 
-    <h3 class="subtitulo2">Totales</h3>
+    <h3 class="subtitulo2" style="visibility: collapse">Totales</h3>
 
-    <div class="totales">
+    <div class="totales" style="visibility: collapse">
         <div class="totales__div" action="">
             <div class="totales__div__div">
                 <div><span>Totales sueldos brutos: </span></div>

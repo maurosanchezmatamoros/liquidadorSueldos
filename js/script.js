@@ -87,6 +87,8 @@ function guardarForm1() {
 let enviarFormDatosEmpleados = document.querySelector(".formDatosEmpleados__div-submit")
 enviarFormDatosEmpleados.addEventListener("click", guardarForm2)
 
+let empleadosCargadosUl = document.querySelector(".empleadosCargados")
+
 function guardarForm2() {
     let legajo = parseInt(document.getElementById("legajo").value)
     let apellidoNombre = document.getElementById("apellidoNombre").value
@@ -96,22 +98,26 @@ function guardarForm2() {
     const nuevoEmpleado = new claseEmpleados (apellidoNombre, legajo, cuil, sueldoHabitual)
     Empleados.push(nuevoEmpleado)
 
-    let empleadosCargadosDiv = document.createElement("div")
-    empleadosCargadosDiv.innerHTML = `<p> Legajo N° ${legajo} - ${apellidoNombre} - <span class="eliminarEmpleado${legajo}">Eliminar</span></p>`
-    document.querySelector(".empleadosCargados").append(empleadosCargadosDiv)
-
-    const eliminarEmpleado = () => {
-        Empleados.pop()
-        empleadosCargadosDiv.remove()
-    }
-
-    let eliminarEmpleadoCreado = document.querySelector(`.eliminarEmpleado${legajo}`)
-    eliminarEmpleadoCreado.addEventListener("click", eliminarEmpleado)
+    let agregarLi = document.createElement("li")
+    empleadosCargadosUl.appendChild(agregarLi)
+    agregarLi.innerHTML = `Legajo N° ${legajo} - ${apellidoNombre} - <span id="del-${legajo}" style="cursor: pointer">Eliminar</span>`
 
     console.log(Empleados)
     console.log("Se guardaron los datos del empleado")
+
+    let eliminarEmpleadoCreado = document.getElementById(`del-${legajo}`)
+    eliminarEmpleadoCreado.addEventListener("click", eliminarEmpleado)
 }
 
+const eliminarEmpleado = (e) => {
+    let idLegajo = e.target.id
+    let nroLegajo = idLegajo.split("-")[1]
+    let indexLegajo = Empleados.findIndex(obj => (obj.legajo == nroLegajo))
+    Empleados.splice(indexLegajo, 1)
+    console.log(Empleados)
+    let elem = e.target
+    elem.parentNode.remove(elem)
+}
 
 /////////////// FORM 3 ///////////////////
 
@@ -123,6 +129,12 @@ function guardarForm3() {
 
     for (i = 0 ; i < Empleados.length ; i++ ) {
 
+    let titulo2 = document.querySelector(".titulo2")
+    titulo2.setAttribute("style", "visibility:visible")
+    let tablaReciboSueldo = document.querySelector(".tablaReciboSueldo")
+    tablaReciboSueldo.setAttribute("style", "visibility:visible")
+    let totales = document.querySelector(".totales")
+    totales.setAttribute("style", "visibility:visible")
 
     let anoLiquidacion = parseInt(document.getElementById("anoLiquidacion").value)
     let mesLiquidacion = parseInt(document.getElementById("mesLiquidacion").value)
