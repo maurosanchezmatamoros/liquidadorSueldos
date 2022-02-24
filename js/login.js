@@ -17,17 +17,19 @@ function signUp() {
     const newUser = document.getElementById("username-sign").value
     const newUserPass = document.getElementById("password-sign").value
     const userFound = Usuarios.find(user => user.username == newUser)
-    if(userFound){alert("El usuario ya se encuentra registrado")}
-    if(newUser.lenght < 6 || newUser.length > 12 || newUserPass.length < 6 || newUserPass.length > 12 ){
-        alert("El usuario y clave deben tener entre 6 y 12 caracteres")}
+    if(userFound){swal("El usuario ya se encuentra registrado", "", "warning")}
+    if(newUser.length < 6 || newUser.length > 12 || newUserPass.length < 6 || newUserPass.length > 12 ){
+        swal("El usuario y clave deben tener entre 6 y 12 caracteres", "", "warning")}
     else{
-    const newSignUp = new Login(newUser, newUserPass)
-    Usuarios.push(newSignUp)
-    console.log(Usuarios)
-    const UsuariosJSON = JSON.stringify(Usuarios)
-    localStorage.setItem("logins", UsuariosJSON)
-    createUser.addEventListener("click", window.location="../pages/liquidador.html")
-    }
+    swal("Usuario creado!", "", "success")
+    .then(() => {
+        const newSignUp = new Login(newUser, newUserPass)
+        Usuarios.push(newSignUp)
+        console.log(Usuarios)
+        const UsuariosJSON = JSON.stringify(Usuarios)
+        localStorage.setItem("logins", UsuariosJSON)
+        createUser.addEventListener("click", window.location="../pages/liquidador.html")
+    })}
 }
 
 function logIn() {
@@ -35,11 +37,13 @@ function logIn() {
     const newPassLog = document.getElementById("password").value
     const userFoundLog = Usuarios.findIndex(user => user.username == newUserLog)
     const userNotFound = !Usuarios.find(user => user.username == newUserLog)
-    if(userNotFound){alert("El usuario no se encuentra registrado")}
-    else if(Usuarios[userFoundLog].password!=newPassLog){alert("Contraseña incorrecta")}
+    if(userNotFound){swal("El usuario no se encuentra registrado", "", "warning")}
+    else if(Usuarios[userFoundLog].password!=newPassLog){swal("Contraseña incorrecta", "", "warning")}
     else{
+    swal("Has ingresado correctamente!", "", "success")
+    .then(() => {
     createUser.addEventListener("click", window.location="../pages/liquidador.html")
-    }
+    })}
 }
 
 const logUser = document.querySelector(".inicio__login__submit")
