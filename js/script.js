@@ -181,15 +181,15 @@ for (i = 0 ; i < Liquidaciones.length ; i++ ) {
 </tr>
 <tr>
     <td>Razón social:</td>
-    <td colspan="3" id="nombreEmpresaRecibo"></td>
+    <td colspan="3" class="nombreEmpresaRecibo"></td>
 </tr>
 <tr>
     <td>CUIT:</td>
-    <td colspan="3" id="cuitEmpresaRecibo"></td>
+    <td colspan="3" class="cuitEmpresaRecibo"></td>
 </tr>
 <tr>
     <td>Domicilio:</td>
-    <td colspan="3" id="domicilioEmpresaRecibo"></td>
+    <td colspan="3" class="domicilioEmpresaRecibo"></td>
 </tr>
 <tr>
     <td>Período de liquidación:</td>
@@ -271,9 +271,6 @@ for (i = 0 ; i < Liquidaciones.length ; i++ ) {
     let tablaReciboSueldo = document.querySelector(".tablaReciboSueldo")
     tablaReciboSueldo.insertAdjacentHTML("beforeend", reciboSueldoNuevo)
 
-    document.getElementById("nombreEmpresaRecibo").innerText = empleador.razonSocial
-    document.getElementById("cuitEmpresaRecibo").innerText = empleador.cuitEmpresa
-    document.getElementById("domicilioEmpresaRecibo").innerText = empleador.domicilioEmpresa
     document.getElementById(`periodoLiquidacionRecibo${i}`).innerText = Liquidaciones[i].mesLiquidacion + "/" + Liquidaciones[i].anoLiquidacion
     document.getElementById(`apellidoNombreRecibo${i}`).innerText = Empleados[i].apellidoNombre
     document.getElementById(`cuilRecibo${i}`).innerText = Empleados[i].cuil
@@ -290,9 +287,17 @@ for (i = 0 ; i < Liquidaciones.length ; i++ ) {
     document.getElementById(`netoPagarRecibo${i}`).innerText = `$${Liquidaciones[i].sueldoNeto.toFixed(2)}`
 }
 
+let nombreEmpresaRecibo = document.querySelectorAll(".nombreEmpresaRecibo")
+let cuitEmpresaRecibo = document.querySelectorAll(".cuitEmpresaRecibo")
+let domicilioEmpresaRecibo = document.querySelectorAll(".domicilioEmpresaRecibo")
+
+nombreEmpresaRecibo.forEach( obj => (obj.innerText = empleador.razonSocial))
+cuitEmpresaRecibo.forEach( obj => (obj.innerText = empleador.cuitEmpresa))
+domicilioEmpresaRecibo.forEach( obj => (obj.innerText = empleador.domicilioEmpresa))
+
 console.log(Liquidaciones)
 
-    sumarTotales()
-    mostrarTotales()
+sumarTotales()
+mostrarTotales()
 }
 

@@ -145,6 +145,10 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .tablaReciboSueldo__in {
@@ -152,6 +156,7 @@ html {
   padding: 1rem;
   border: 2px solid #262626;
   background-color: #AECCF2;
+  margin-bottom: 1rem;
 }
 
 .tablaReciboSueldo__in tr th {
