@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +18,7 @@
 
     <h3 class="subtitulo sub2">Datos del empleador</h3>
 
-    <div class="form1">
+    <div class="form1" data-aos="flip-up" data-aos-delay="50" data-aos-duration="1000">
         <form class="formDatosGenerales" action="">
             <div class="formDatosGenerales__div">
                 <div><label for="nombreEmpresa">Razón social:</label></div>
@@ -37,7 +38,7 @@
 
     <h3 class="subtitulo sub3" style="display: none">Carga de empleados</h3>
 
-    <div class="form2" style="display: none">
+    <div class="form2" style="display: none" data-aos="flip-up" data-aos-delay="50" data-aos-duration="1000">
         <form class="formDatosEmpleados" action="">
             <div class="formDatosEmpleados__div">
                 <div><label for="legajo">Legajo N°:</label></div>
@@ -120,7 +121,11 @@
             </div>
         </div>
 
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script src="../js/script.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
+    <script src="../js/script.js"></script>
 </body>
 </html>

@@ -138,6 +138,11 @@ enviarFormDatosLiquidacion.addEventListener("click", guardarForm3)
 
 function guardarForm3() {
 
+    Liquidaciones = []
+
+    let tablaReciboSueldo = document.querySelector(".tablaReciboSueldo")
+    tablaReciboSueldo.innerText = ""
+
     for (i = 0 ; i < Empleados.length ; i++ ) {
 
     let sub5 = document.querySelector(".sub5")
@@ -268,7 +273,7 @@ for (i = 0 ; i < Liquidaciones.length ; i++ ) {
 </tr>
 </table>`
 
-    let tablaReciboSueldo = document.querySelector(".tablaReciboSueldo")
+    tablaReciboSueldo = document.querySelector(".tablaReciboSueldo")
     tablaReciboSueldo.insertAdjacentHTML("beforeend", reciboSueldoNuevo)
 
     document.getElementById(`periodoLiquidacionRecibo${i}`).innerText = Liquidaciones[i].mesLiquidacion + "/" + Liquidaciones[i].anoLiquidacion
@@ -299,5 +304,5 @@ console.log(Liquidaciones)
 
 sumarTotales()
 mostrarTotales()
-}
 
+}

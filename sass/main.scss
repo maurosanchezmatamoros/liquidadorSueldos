@@ -79,6 +79,15 @@ html{
     }
 }
 
+.empleadosCargados{
+    li{
+        margin-bottom: 0.5rem;
+        span{
+            text-decoration: underline
+        }
+    }
+}
+
 .form3{
     @extend .form1;
     .formDatosLiquidacion{
@@ -94,9 +103,11 @@ html{
 
 .tablaReciboSueldo{
     display: flex;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
     &__in{
+        max-width: 60rem;
         border-radius: 1rem;
         padding: 1rem;
         border: 2px solid #262626;
