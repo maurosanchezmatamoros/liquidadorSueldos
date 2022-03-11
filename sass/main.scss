@@ -1,7 +1,7 @@
 @import "./components/_login";
 
 html{
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', sans-serif !important; 
     background-color: #AECCF290;
 }
 
@@ -72,6 +72,19 @@ html{
         @extend .formDatosGenerales;
         &__div{
             @extend .formDatosGenerales__div;
+            select{
+                border-radius: 0.5rem;
+                line-height: 1.5rem;
+                border: none;
+                padding: 0.3rem;
+                font-family: 'Raleway', sans-serif;
+                option{
+                    border-radius: 0.5rem;
+                    line-height: 1.5rem;
+                    border: none;
+                    padding: 0.3rem;
+                }
+            }
             &-submit{
                 @extend .formDatosGenerales__div-submit;
             }

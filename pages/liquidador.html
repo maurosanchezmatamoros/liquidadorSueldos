@@ -38,7 +38,7 @@
 
     <h3 class="subtitulo sub3" style="display: none">Carga de empleados</h3>
 
-    <div class="form2" style="display: none" data-aos="flip-up" data-aos-delay="50" data-aos-duration="1000">
+    <div class="form2" style="display: none">
         <form class="formDatosEmpleados" action="">
             <div class="formDatosEmpleados__div">
                 <div><label for="legajo">Legajo N°:</label></div>
@@ -53,8 +53,8 @@
                 <div><input id=cuil type="text" size="11" length="11"></div>
             </div>
             <div class="formDatosEmpleados__div">
-                <div><label for="sueldoHabitual">Sueldo bruto de la categoría:</label></div>
-                <div><input id=sueldoHabitual type="number" step="0.01" required min="0"></div>
+                <div><label for="categoria">Categoria:</label></div>
+                <div><select id=categoria name=categoria></select></div>
             </div>
             <div class="formDatosEmpleados__div-submit"><input type="button" value="CARGAR EMPLEADO"></div>
             <div>

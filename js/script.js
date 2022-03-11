@@ -1,3 +1,14 @@
+const $categorias= document.getElementById("categoria")
+    
+let totalSueldosBrutos = 0
+let totalDescuentos = 0
+let totalSueldosNetos = 0
+
+let empleador = {}
+let Empleados = []
+let Liquidaciones = []
+let Categorias = []
+
 const descontarJubilacion = x => x * 0.11
 const descontarLey19032 = x => x * 0.03
 const descontarLey23660 = x => x * 0.03
@@ -8,9 +19,20 @@ function diasDelMes(mes, ano) {
     return new Date(ano, mes, 0).getDate()
 }
 
-let totalSueldosBrutos = 0
-let totalDescuentos = 0
-let totalSueldosNetos = 0
+fetch("../data/comercio.json")
+    .then((res) => (res.ok? json() : Promise.reject(res)))
+    .then((data) => {
+        Categorias = data
+        data.forEach((cat) => {
+            const option = document.createElement("option")
+            option.innerText = `${cat.categoria} - ${cat.letra}`
+            option.setAttribute("value", `${cat.categoria} - ${cat.letra}`)
+            $categorias.append(option)
+        })
+    })
+    .catch((err) => {
+        swal(`Error ${err.status}`, "No se pueden obtener las categorías", "warning")
+        console.log(`Error ${err.status}`)})
 
 const sumarTotales = () => {
 totalSueldosBrutos = Liquidaciones.reduce((acc,curr) => acc + curr.sueldoBruto, 0)
@@ -27,13 +49,6 @@ const mostrarTotales = () => {
     document.getElementById("totalDescuentos").innerText = `$${totalDescuentos.toFixed(2)}`
     document.getElementById("totalSueldosNetos").innerText = `$${totalSueldosNetos.toFixed(2)}`
 }
-
-let empleador = {}
-
-let Empleados = []
-
-let Liquidaciones = []
-
 class claseEmpleador {
     constructor (nombreEmpresa, cuitEmpresa, domicilioEmpresa){
     this.razonSocial = nombreEmpresa
@@ -49,7 +64,6 @@ class claseEmpleados {
     this.sueldoHabitual = sueldoHabitual
     }
 }
-
 class claseLiquidaciones {
     constructor (anoLiquidacion, mesLiquidacion, diasMesLiquidacion, diasAusencias, ausencias, jubilacion, ley19032, ley23660, sindicato, sueldoHabitual) {
     this.anoLiquidacion = anoLiquidacion
@@ -104,8 +118,12 @@ function guardarForm2() {
     let legajo = parseInt(document.getElementById("legajo").value)
     let apellidoNombre = document.getElementById("apellidoNombre").value
     let cuil = document.getElementById("cuil").value
-    let sueldoHabitual = Number(document.getElementById("sueldoHabitual").value)
-
+    
+    let categoria = document.getElementById("categoria").value
+    let catValue = categoria.split(" - ")[0]
+    let letraValue = categoria.split(" - ")[1]
+    let sueldoHabitual = Categorias.find(item => (item.categoria == catValue && item.letra == letraValue)).basico
+    
     const nuevoEmpleado = new claseEmpleados (apellidoNombre, legajo, cuil, sueldoHabitual)
     Empleados.push(nuevoEmpleado)
 

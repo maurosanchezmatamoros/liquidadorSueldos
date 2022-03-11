@@ -1,0 +1,23 @@
+[
+    {"basico": 70769.90, "categoria": "Maestranza y Servicios", "letra": "A"},
+    {"basico": 70974.80, "categoria": "Maestranza y Servicios", "letra": "B"},
+    {"basico": 71692.60, "categoria": "Maestranza y Servicios", "letra": "C"},
+    {"basico": 71538.90, "categoria": "Administrativo",         "letra": "A"},
+    {"basico": 71846.80, "categoria": "Administrativo",         "letra": "B"},
+    {"basico": 72154.30, "categoria": "Administrativo",         "letra": "C"},
+    {"basico": 73077.30, "categoria": "Administrativo",         "letra": "D"},
+    {"basico": 73846.30, "categoria": "Administrativo",         "letra": "E"},
+    {"basico": 74974.30, "categoria": "Administrativo",         "letra": "F"},
+    {"basico": 71795.20, "categoria": "Cajero",                 "letra": "A"},
+    {"basico": 72154.30, "categoria": "Cajero",                 "letra": "B"},
+    {"basico": 72615.80, "categoria": "Cajero",                 "letra": "C"},
+    {"basico": 71795.20, "categoria": "Personal Auxiliar",      "letra": "A"},
+    {"basico": 72308.00, "categoria": "Personal Auxiliar",      "letra": "B"},
+    {"basico": 74000.10, "categoria": "Personal Auxiliar",      "letra": "C"},
+    {"basico": 72410.70, "categoria": "Auxiliar Especializado", "letra": "A"},
+    {"basico": 73333.60, "categoria": "Auxiliar Especializado", "letra": "B"},
+    {"basico": 71795.20, "categoria": "Vendedor",               "letra": "A"},
+    {"basico": 73333.70, "categoria": "Vendedor",               "letra": "B"},
+    {"basico": 73846.30, "categoria": "Vendedor",               "letra": "C"},
+    {"basico": 74974.30, "categoria": "Vendedor",               "letra": "D"}
+]

@@ -57,7 +57,7 @@
 }
 
 html {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif !important;
   background-color: #AECCF290;
 }
 
@@ -136,6 +136,21 @@ html {
 
 .form1 .formDatosGenerales__div-submit input:active, .form2 .formDatosGenerales__div-submit input:active, .form3 .formDatosGenerales__div-submit input:active, .form2 .formDatosEmpleados__div-submit input:active, .form3 .formDatosLiquidacion__div-submit input:active {
   background-color: #65768C80;
+}
+
+.form2 .formDatosEmpleados__div select {
+  border-radius: 0.5rem;
+  line-height: 1.5rem;
+  border: none;
+  padding: 0.3rem;
+  font-family: 'Raleway', sans-serif;
+}
+
+.form2 .formDatosEmpleados__div select option {
+  border-radius: 0.5rem;
+  line-height: 1.5rem;
+  border: none;
+  padding: 0.3rem;
 }
 
 .empleadosCargados li {
