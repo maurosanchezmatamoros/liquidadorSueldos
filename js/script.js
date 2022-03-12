@@ -20,7 +20,7 @@ function diasDelMes(mes, ano) {
 }
 
 fetch("../data/comercio.json")
-    .then((res) => (res.ok? json() : Promise.reject(res)))
+    .then((res) => (res.ok? res.json() : Promise.reject(res)))
     .then((data) => {
         Categorias = data
         data.forEach((cat) => {

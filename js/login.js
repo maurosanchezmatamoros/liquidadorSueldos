@@ -28,7 +28,7 @@ function signUp() {
         console.log(Usuarios)
         const UsuariosJSON = JSON.stringify(Usuarios)
         localStorage.setItem("logins", UsuariosJSON)
-        createUser.addEventListener("click", window.location.assign("../pages/liquidador.html"))
+        createUser.addEventListener("click", window.location.href = "../pages/liquidador.html")
     })}
 }
 
