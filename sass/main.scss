@@ -88,6 +88,9 @@ html{
             &-submit{
                 @extend .formDatosGenerales__div-submit;
             }
+            &-agregarLegajo{
+                @extend .formDatosGenerales__div-submit;
+            }
         }
     }
 }
@@ -109,6 +112,17 @@ html{
             @extend .formDatosGenerales__div;
             &-submit{
                 @extend .formDatosGenerales__div-submit;
+            }
+        }
+        &__div-ausencias{
+            @extend .formDatosGenerales__div;
+            flex-direction: column;
+            div {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.2rem 0;
             }
         }
     }
@@ -156,6 +170,24 @@ html{
             div{
                 margin: 0 2rem;
             }
+        }
+    }
+}
+
+.divBotonImprimir{
+    justify-content: center;
+    align-items: center;
+    #botonImprimirRecibos{
+        width: 10rem;
+        height: 2rem;
+        margin-top: 1rem;
+        background-color: #65768C;
+        font-weight: bold;
+        border: none;
+        border-radius: 0.5rem;
+        color: #fff;
+        :active {
+            background-color: #65768C80;
         }
     }
 }

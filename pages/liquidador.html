@@ -18,21 +18,21 @@
 
     <h3 class="subtitulo sub2">Datos del empleador</h3>
 
-    <div class="form1" data-aos="flip-up" data-aos-delay="50" data-aos-duration="1000">
+    <div class="form1">
         <form class="formDatosGenerales" action="">
             <div class="formDatosGenerales__div">
                 <div><label for="nombreEmpresa">Razón social:</label></div>
-                <div><input id="nombreEmpresa" type="text"></div>
+                <div><input id="nombreEmpresa" type="text" required></div>
             </div>
             <div class="formDatosGenerales__div">
                 <div><label for="cuitEmpresa">CUIT:</label></div>
-                <div><input id="cuitEmpresa" type="text" size="11 || 13"></div>
+                <div><input id="cuitEmpresa" type="text" minlength="11"></div>
             </div>
             <div class="formDatosGenerales__div">
                 <div><label for="domicilioEmpresa">Domicilio:</label></div>
                 <div><input id="domicilioEmpresa" type="text"></div>
             </div>
-            <div class="formDatosGenerales__div-submit"><input type="button" value="GUARDAR DATOS"></div>
+            <div class="formDatosGenerales__div-submit"><input type="submit" value="GUARDAR DATOS"></div>
         </form>
     </div>
 
@@ -50,16 +50,17 @@
             </div>
             <div class="formDatosEmpleados__div">
                 <div><label for="cuil">CUIL del empleado:</label></div>
-                <div><input id=cuil type="text" size="11" length="11"></div>
+                <div><input id=cuil type="text" minlength="11" maxlength="11"></div>
             </div>
             <div class="formDatosEmpleados__div">
                 <div><label for="categoria">Categoria:</label></div>
                 <div><select id=categoria name=categoria></select></div>
             </div>
-            <div class="formDatosEmpleados__div-submit"><input type="button" value="CARGAR EMPLEADO"></div>
+            <div class="formDatosEmpleados__div-agregarLegajo"><input type="submit" value="AGREGAR LEGAJO"></div>
             <div>
                 <ul class="empleadosCargados"></ul>
             </div>
+            <div class="formDatosEmpleados__div-submit"><input type="button" value="CONTINUAR"></div>
         </form>
     </div>
 
@@ -75,9 +76,8 @@
                 <div><label for="mesLiquidacion">Mes de liquidación (MM):</label></div>
                 <div><input id="mesLiquidacion" type="number" required size="2" max="12" min="1"></div>
             </div>
-            <div class="formDatosLiquidacion__div">
-                <div><label for="diasAusencias">Días de ausencias del mes:</label></div>
-                <div><input id=diasAusencias type="number" required></div>
+            <div class="formDatosLiquidacion__div-ausencias">
+                <div>Días de ausencias en el mes</div>
             </div>
             <div class="formDatosLiquidacion__div">
                 <div><label for="descuentoJubilacion">El empleado aporta jubilación?</label></div>
@@ -95,13 +95,13 @@
                 <div><label for="alicuotaSindicato">Alicuota de aporte al Sindicato: (%)</label></div>
                 <div><input id=alicuotaSindicato type="number" required placeholder="0.0" step="0.1" size="4" max="40" min="0"></div>
             </div>
-            <div class="formDatosLiquidacion__div-submit"><input type="button" value="GENERAR RECIBOS"></div>
+            <div class="formDatosLiquidacion__div-submit"><input type="submit" value="GENERAR RECIBOS"></div>
         </form>
     </div>
 
-    <h2 class="titulo2" style="display: none">Recibos de sueldo</h2>
+    <h2 class="titulo2" id="titulo2" style="display: none">Recibos de sueldo</h2>
 
-    <div class="tablaReciboSueldo" style="display: none"></div>
+    <div class="tablaReciboSueldo" style="display: none" media="print"></div>
 
     <h3 class="subtitulo sub5" style="display: none">Totales</h3>
 
@@ -120,12 +120,11 @@
                 <div><span id="totalSueldosNetos">$ -</span></div>
             </div>
         </div>
+    </div>
+
+    <div class="divBotonImprimir" style="display: none"><button id="botonImprimirRecibos">IMPRIMIR RECIBOS</button></div>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-    AOS.init();
-    </script>
     <script src="../js/script.js"></script>
 </body>
 </html>

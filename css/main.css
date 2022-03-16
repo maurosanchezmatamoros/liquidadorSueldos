@@ -97,7 +97,7 @@ html {
   background-color: #AECCF2;
 }
 
-.form1 .formDatosGenerales__div, .form2 .formDatosGenerales__div, .form3 .formDatosGenerales__div, .form2 .formDatosEmpleados__div, .form3 .formDatosLiquidacion__div {
+.form1 .formDatosGenerales__div, .form2 .formDatosGenerales__div, .form3 .formDatosGenerales__div, .form2 .formDatosEmpleados__div, .form3 .formDatosLiquidacion__div, .form3 .formDatosLiquidacion__div-ausencias {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -109,21 +109,21 @@ html {
   padding: 0.3rem;
 }
 
-.form1 .formDatosGenerales__div div, .form2 .formDatosGenerales__div div, .form3 .formDatosGenerales__div div, .form2 .formDatosEmpleados__div div, .form3 .formDatosLiquidacion__div div {
+.form1 .formDatosGenerales__div div, .form2 .formDatosGenerales__div div, .form3 .formDatosGenerales__div div, .form2 .formDatosEmpleados__div div, .form3 .formDatosLiquidacion__div div, .form3 .formDatosLiquidacion__div-ausencias div {
   margin: 0 2rem;
 }
 
-.form1 .formDatosGenerales__div div input, .form2 .formDatosGenerales__div div input, .form3 .formDatosGenerales__div div input, .form2 .formDatosEmpleados__div div input, .form3 .formDatosLiquidacion__div div input {
+.form1 .formDatosGenerales__div div input, .form2 .formDatosGenerales__div div input, .form3 .formDatosGenerales__div div input, .form2 .formDatosEmpleados__div div input, .form3 .formDatosLiquidacion__div div input, .form3 .formDatosLiquidacion__div-ausencias div input {
   border-radius: 0.5rem;
   line-height: 1.5rem;
   border: none;
 }
 
-.form1 .formDatosGenerales__div-submit, .form2 .formDatosGenerales__div-submit, .form3 .formDatosGenerales__div-submit, .form2 .formDatosEmpleados__div-submit, .form3 .formDatosLiquidacion__div-submit {
+.form1 .formDatosGenerales__div-submit, .form2 .formDatosGenerales__div-submit, .form3 .formDatosGenerales__div-submit, .form2 .formDatosEmpleados__div-submit, .form2 .formDatosEmpleados__div-agregarLegajo, .form3 .formDatosLiquidacion__div-submit {
   text-align: center;
 }
 
-.form1 .formDatosGenerales__div-submit input, .form2 .formDatosGenerales__div-submit input, .form3 .formDatosGenerales__div-submit input, .form2 .formDatosEmpleados__div-submit input, .form3 .formDatosLiquidacion__div-submit input {
+.form1 .formDatosGenerales__div-submit input, .form2 .formDatosGenerales__div-submit input, .form3 .formDatosGenerales__div-submit input, .form2 .formDatosEmpleados__div-submit input, .form2 .formDatosEmpleados__div-agregarLegajo input, .form3 .formDatosLiquidacion__div-submit input {
   width: 10rem;
   height: 2rem;
   margin-top: 1rem;
@@ -134,7 +134,7 @@ html {
   color: #fff;
 }
 
-.form1 .formDatosGenerales__div-submit input:active, .form2 .formDatosGenerales__div-submit input:active, .form3 .formDatosGenerales__div-submit input:active, .form2 .formDatosEmpleados__div-submit input:active, .form3 .formDatosLiquidacion__div-submit input:active {
+.form1 .formDatosGenerales__div-submit input:active, .form2 .formDatosGenerales__div-submit input:active, .form3 .formDatosGenerales__div-submit input:active, .form2 .formDatosEmpleados__div-submit input:active, .form2 .formDatosEmpleados__div-agregarLegajo input:active, .form3 .formDatosLiquidacion__div-submit input:active {
   background-color: #65768C80;
 }
 
@@ -159,6 +159,30 @@ html {
 
 .empleadosCargados li span {
   text-decoration: underline;
+}
+
+.form3 .formDatosLiquidacion__div-ausencias {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.form3 .formDatosLiquidacion__div-ausencias div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.2rem 0;
 }
 
 .tablaReciboSueldo {
@@ -227,4 +251,28 @@ html {
 
 .totales__div__div div {
   margin: 0 2rem;
+}
+
+.divBotonImprimir {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.divBotonImprimir #botonImprimirRecibos {
+  width: 10rem;
+  height: 2rem;
+  margin-top: 1rem;
+  background-color: #65768C;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.5rem;
+  color: #fff;
+}
+
+.divBotonImprimir #botonImprimirRecibos :active {
+  background-color: #65768C80;
 }
