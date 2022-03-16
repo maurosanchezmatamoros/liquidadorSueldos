@@ -40,7 +40,8 @@ const imprimirRecibos = () => {
     let areaTotal = document.body.innerHTML
     document.body.innerHTML = areaImprimir
     window.print()
-    document.body.innerHTML = areaTotal
+    backBody = () => document.body.innerHTML = areaTotal
+    setTimeout(backBody, 0)
 }
 
 ///////////// CLASES ////////////////
@@ -388,8 +389,8 @@ function guardarForm3(event) {
     endProyect.setAttribute("style", "display: block")
     logOutFin.addEventListener("click", clearStorage)
 
-    endProyect.scrollIntoView({behavior: "smooth"})
-
+    scrollFinal = () => logOutFin.scrollIntoView({behavior: "smooth"})
+    setTimeout(scrollFinal, 0)
 }
 
 ///////////// FINALIZAR ////////////////
