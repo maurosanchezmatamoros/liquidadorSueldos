@@ -1,6 +1,9 @@
 .inicio {
     display: flex;
     justify-content: center;
+    @media screen and (max-width: 600px){
+        flex-wrap: wrap;
+    }
     &__login {
         border: 2px solid #262626;
         border-radius: 1rem;

@@ -30,10 +30,6 @@ totalSueldosNetos = Liquidaciones.reduce((acc,curr) => acc + curr.sueldoNeto, 0)
 }
 
 const mostrarTotales = () => {
-    console.log("Total final de sueldos brutos: $" + totalSueldosBrutos.toFixed(2))
-    console.log("Total final de descuentos: ( $" + totalDescuentos.toFixed(2) + ")")
-    console.log("Total final de sueldos netos a pagar: $" + totalSueldosNetos.toFixed(2))
-
     document.getElementById("totalSueldosBrutos").innerText = `$${totalSueldosBrutos.toFixed(2)}`
     document.getElementById("totalDescuentos").innerText = `$${totalDescuentos.toFixed(2)}`
     document.getElementById("totalSueldosNetos").innerText = `$${totalSueldosNetos.toFixed(2)}`
@@ -84,8 +80,8 @@ class claseLiquidaciones {
 ///////////// JSON ////////////////
 
 fetch("../data/comercio.json")
-    .then((res) => (res.ok? res.json() : Promise.reject(res)))
-    .then((data) => {
+.then((res) => (res.ok? res.json() : Promise.reject(res)))
+.then((data) => {
         Categorias = data
         data.forEach((cat) => {
             const option = document.createElement("option")
@@ -93,10 +89,23 @@ fetch("../data/comercio.json")
             option.setAttribute("value", `${cat.categoria} - ${cat.letra}`)
             $categorias.append(option)
         })
+})
+.catch((err) => {
+    swal(`Error ${err.status}`, "No se pueden obtener las categorías", "warning")
     })
-    .catch((err) => {
-        swal(`Error ${err.status}`, "No se pueden obtener las categorías", "warning")
-        console.log(`Error ${err.status}`)})
+
+///////////// BIENVENIDA ////////////////
+
+let usuarioLogueado = sessionStorage.getItem("loginSession")
+let bienvenida = document.getElementById("bienvenida")
+bienvenida.innerHTML = `Hola ${usuarioLogueado}!!! <a id="logOut" href="../index.html">Cerrar sesión</a>`
+let logOut = document.getElementById("logOut")
+let clearStorage = () => sessionStorage.clear()
+logOut.addEventListener("click", clearStorage)
+
+if(!usuarioLogueado){
+    window.location.href = "../index.html"
+}
 
 ///////////// FORM 1 ////////////////
 
@@ -113,9 +122,6 @@ function guardarForm1(event) {
     
     empleador = new claseEmpleador(nombreEmpresa, cuitEmpresa, domicilioEmpresa)
     
-    console.log(empleador)
-    console.log("Se guardaron los datos del empleador")
-
     let sub3 = document.querySelector(".sub3")
     sub3.removeAttribute("style", "display")
     let form2 = document.querySelector(".form2")
@@ -155,9 +161,6 @@ function agregarEmpleado(event) {
         empleadosCargadosUl.appendChild(agregarLi)
         agregarLi.innerHTML = `Legajo N° ${legajo} - ${apellidoNombre} - <span id="del-${legajo}" style="cursor: pointer">Eliminar</span>`
 
-        console.log(Empleados)
-        console.log("Se guardaron los datos del empleado")
-
         let eliminarEmpleadoCreado = document.getElementById(`del-${legajo}`)
         eliminarEmpleadoCreado.addEventListener("click", eliminarEmpleado)
 
@@ -170,7 +173,6 @@ const eliminarEmpleado = ((e) => {
     let nroLegajo = idLegajo.split("-")[1]
     let indexLegajo = Empleados.findIndex((obj) => obj.legajo == nroLegajo)
     Empleados.splice(indexLegajo, 1)
-    console.log(Empleados)
     let elem = e.target
     elem.parentNode.remove(elem)
 })
@@ -377,11 +379,19 @@ function guardarForm3(event) {
     cuitEmpresaRecibo.forEach( obj => (obj.innerText = empleador.cuitEmpresa))
     domicilioEmpresaRecibo.forEach( obj => (obj.innerText = empleador.domicilioEmpresa))
 
-    console.log(Liquidaciones)
-
     sumarTotales()
     mostrarTotales()
 
-    totales.scrollIntoView({behavior: "smooth"})
+    let endProyect = document.getElementById("endProyect")
+    endProyect.innerHTML = `Adios ${usuarioLogueado}!!! <a id="logOutFin" href="../index.html">Cerrar sesión</a>`
+    let logOutFin = document.getElementById("logOutFin")
+    endProyect.setAttribute("style", "display: block")
+    logOutFin.addEventListener("click", clearStorage)
+
+    endProyect.scrollIntoView({behavior: "smooth"})
 
 }
+
+///////////// FINALIZAR ////////////////
+
+

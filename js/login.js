@@ -4,8 +4,6 @@ if(JSON.parse(localStorage.getItem("logins"))!=null) {
     Usuarios = JSON.parse(localStorage.getItem("logins"))
 }
 
-console.log(Usuarios)
-
 class Login {
     constructor (newUser, newUserPass){
     this.username = newUser
@@ -18,16 +16,16 @@ function signUp() {
     const newUserPass = document.getElementById("password-sign").value
     const userFound = Usuarios.find(user => user.username == newUser)
     if(userFound){swal("El usuario ya se encuentra registrado", "", "warning")}
-    if(newUser.length < 6 || newUser.length > 12 || newUserPass.length < 6 || newUserPass.length > 12 ){
+    else if(newUser.length < 6 || newUser.length > 12 || newUserPass.length < 6 || newUserPass.length > 12 ){
         swal("El usuario y clave deben tener entre 6 y 12 caracteres", "", "warning")}
     else{
     swal("Usuario creado!", "", "success")
     .then(() => {
         const newSignUp = new Login(newUser, newUserPass)
         Usuarios.push(newSignUp)
-        console.log(Usuarios)
         const UsuariosJSON = JSON.stringify(Usuarios)
         localStorage.setItem("logins", UsuariosJSON)
+        sessionStorage.setItem("loginSession", newUser)
         createUser.addEventListener("click", window.location.href = "../pages/liquidador.html")
     })}
 }
@@ -42,7 +40,8 @@ function logIn() {
     else{
     swal("Has ingresado correctamente!", "", "success")
     .then(() => {
-    createUser.addEventListener("click", window.location="../pages/liquidador.html")
+        sessionStorage.setItem("loginSession", newUserLog)
+        createUser.addEventListener("click", window.location="../pages/liquidador.html")
     })}
 }
 

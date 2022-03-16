@@ -7,6 +7,13 @@
           justify-content: center;
 }
 
+@media screen and (max-width: 600px) {
+  .inicio {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
 .inicio__login, .inicio__signup {
   border: 2px solid #262626;
   border-radius: 1rem;
@@ -56,6 +63,20 @@
   background-color: #65768C80;
 }
 
+#bienvenida, #endProyect {
+  text-align: end;
+  font-style: oblique;
+  font-weight: 500;
+}
+
+#bienvenida a, #endProyect a {
+  text-decoration: underline;
+}
+
+#endProyect {
+  padding: 2rem 0;
+}
+
 html {
   font-family: 'Raleway', sans-serif !important;
   background-color: #AECCF290;
@@ -97,6 +118,12 @@ html {
   background-color: #AECCF2;
 }
 
+@media screen and (max-width: 500px) {
+  .form1 .formDatosGenerales, .form2 .formDatosGenerales, .form3 .formDatosGenerales, .form2 .formDatosEmpleados, .form3 .formDatosLiquidacion {
+    padding: 1rem;
+  }
+}
+
 .form1 .formDatosGenerales__div, .form2 .formDatosGenerales__div, .form3 .formDatosGenerales__div, .form2 .formDatosEmpleados__div, .form3 .formDatosLiquidacion__div, .form3 .formDatosLiquidacion__div-ausencias {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -104,9 +131,17 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   padding: 0.3rem;
+}
+
+@media screen and (max-width: 440px) {
+  .form1 .formDatosGenerales__div, .form2 .formDatosGenerales__div, .form3 .formDatosGenerales__div, .form2 .formDatosEmpleados__div, .form3 .formDatosLiquidacion__div, .form3 .formDatosLiquidacion__div-ausencias {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
 }
 
 .form1 .formDatosGenerales__div div, .form2 .formDatosGenerales__div div, .form3 .formDatosGenerales__div div, .form2 .formDatosEmpleados__div div, .form3 .formDatosLiquidacion__div div, .form3 .formDatosLiquidacion__div-ausencias div {
@@ -138,6 +173,27 @@ html {
   background-color: #65768C80;
 }
 
+@media screen and (max-width: 500px) {
+  .form2 .formDatosEmpleados {
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .form2 .formDatosEmpleados__div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .form2 .formDatosEmpleados__div select {
   border-radius: 0.5rem;
   line-height: 1.5rem;
@@ -161,11 +217,35 @@ html {
   text-decoration: underline;
 }
 
+@media screen and (max-width: 500px) {
+  .form3 .formDatosLiquidacion__div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+}
+
 .form3 .formDatosLiquidacion__div-ausencias {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+@media screen and (max-width: 500px) {
+  .form3 .formDatosLiquidacion__div-ausencias {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .form3 .formDatosLiquidacion__div-ausencias div {
@@ -185,6 +265,12 @@ html {
   padding: 0.2rem 0;
 }
 
+@media screen and (max-width: 500px) {
+  .form3 .formDatosLiquidacion__div-ausencias div input {
+    margin-left: 0.4rem;
+  }
+}
+
 .tablaReciboSueldo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -199,6 +285,18 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+@media screen and (max-width: 450px) {
+  .tablaReciboSueldo {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 450px) and (max-width: 500px) {
+  .tablaReciboSueldo {
+    font-size: 14px;
+  }
 }
 
 .tablaReciboSueldo__in {
@@ -230,6 +328,12 @@ html {
           justify-content: center;
 }
 
+@media screen and (max-width: 450px) {
+  .totales {
+    text-align: center;
+  }
+}
+
 .totales__div {
   border: 2px solid #262626;
   border-radius: 1rem;
@@ -247,6 +351,19 @@ html {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding: 0.3rem;
+}
+
+@media screen and (max-width: 500px) {
+  .totales__div__div {
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .totales__div__div div {
